@@ -4,7 +4,7 @@
 
 (let [start (System/nanoTime)]
   (b/build "src"
-    {:main 'tasclj.core
+    {:main 'tasclj.fn
      :output-to "out/tasclj.js"
      :output-dir "out"
      :verbose true})
