@@ -6,6 +6,6 @@
   (b/build "src"
     {:output-to "release/tasclj.js"
      :output-dir "release"
-     :optimizations :advanced
+     :optimizations :simple
      :verbose true})
   (println "... done. Elapsed" (/ (- (System/nanoTime) start) 1e9) "seconds"))
