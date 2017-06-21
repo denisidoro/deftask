@@ -1,447 +1,447 @@
 (ns tasclj.tasker)
 
-(ns tasclj.tasker)
+; http://tasker.dinglisch.net/userguide/en/javascript.html
 
-(defn alarmVol
+(defn alarm-vol
   [level display sound
   (js/alarmVol level display sound))
 
-(defn audioRecord
+(defn audio-record
   [destPath source codec format]
   (js/audioRecord destPath source codec format))
 
-(defn audioRecordStop 
+(defn audio-record-stop
   []
   (js/audioRecordStop ))
 
-(defn browseURL 
+(defn browse-url
   [URL]
   (js/browseURL URL))
 
-(defn button 
+(defn button
   [name]
   (js/button name))
 
-(defn call 
+(defn call
   [num autoDial]
   (js/call num autoDial))
 
-(defn callBlock 
+(defn call-block
   [numMatch showInfo]
   (js/callBlock numMatch showInfo))
 
-(defn callDivert 
+(defn call-divert
   [fromMatch to showInfo]
   (js/callDivert fromMatch to showInfo))
 
-(defn callRevert 
+(defn call-revert
   [numMatch]
   (js/callRevert numMatch))
 
-(defn carMode 
+(defn car-mode
   [onFlag]
   (js/carMode onFlag))
 
-(defn clearKey 
+(defn clear-key
   [keyName]
   (js/clearKey keyName))
 
-(defn composeEmail 
+(defn compose-email
   [to subject message]
   (js/composeEmail to subject message))
 
-(defn composeMMS 
+(defn compose-mms
   [to subject message attachmentPath]
   (js/composeMMS to subject message attachmentPath))
 
-(defn composeSMS 
+(defn compose-sms
   [to message]
   (js/composeSMS to message))
 
-(defn convert 
+(defn convert
   [val conversionType]
   (js/convert val conversionType))
 
-(defn createDir 
+(defn create-dir
   [dirPath createParent useRoot]
   (js/createDir dirPath createParent useRoot))
 
-(defn createScene 
+(defn create-scene
   [sceneName]
   (js/createScene sceneName))
 
-(defn cropImage 
+(defn crop-image
   [fromLeftPercent fromRightPercent fromTopPercent fromBottomPercent]
   (js/cropImage fromLeftPercent fromRightPercent fromTopPercent fromBottomPercent))
 
-(defn decryptDir 
+(defn decrypt-dir
   [path key removeKey]
   (js/decryptDir path key removeKey))
 
-(defn decryptFile 
+(defn decrypt-file
   [path key removeKey]
   (js/decryptFile path key removeKey))
 
-(defn deleteDir 
+(defn delete-dir
   [dirPath recurse useRoot]
   (js/deleteDir dirPath recurse useRoot))
 
-(defn deleteFile 
+(defn delete-file
   [filePath shredTimes useRoot]
   (js/deleteFile filePath shredTimes useRoot))
 
-(defn destroyScene 
+(defn destroy-scene
   [sceneName]
   (js/destroyScene sceneName))
 
-(defn displayAutoBright 
+(defn display-auto-bright
   [onFlag]
   (js/displayAutoBright onFlag))
 
-(defn displayRotate 
+(defn display-rotate
   [onFlag]
   (js/displayRotate onFlag))
 
-(defn displayTimeout 
+(defn display-timeout
   [hours minutes seconds]
   (js/displayTimeout hours minutes seconds))
 
-(defn dpad 
+(defn dpad
   [direction noRepeats]
   (js/dpad direction noRepeats))
 
-(defn enableProfile 
+(defn enable-profile
   [name enable]
   (js/enableProfile name enable))
 
-(defn encryptDir 
+(defn encrypt-dir
   [path keyName rememberKey shredOriginal]
   (js/encryptDir path keyName rememberKey shredOriginal))
 
-(defn elemBackColour 
+(defn elem-back-color
   [scene element startColour endColour]
   (js/elemBackColour scene element startColour endColour))
 
-(defn elemBorder 
+(defn elem-border
   [scene element width colour]
   (js/elemBorder scene element width colour))
 
-(defn elemPosition 
+(defn elem-position
   [scene element orientation x y animMS]
   (js/elemPosition scene element orientation x y animMS))
 
-(defn elemText 
+(defn elem-text
   [scene element position text]
   (js/elemText scene element position text))
 
-(defn elemTextColour 
+(defn elem-text-color
   [scene element colour]
   (js/elemTextColour scene element colour))
 
-(defn elemTextSize 
+(defn elem-text-size
   [scene element size]
   (js/elemTextSize scene element size))
 
-(defn elemVisibility 
+(defn elem-visibility
   [scene element visible animationTimeMS]
   (js/elemVisibility scene element visible animationTimeMS))
 
-(defn endCall 
+(defn end-call
   []
-  (js/endCall ))
+  (js/endCall))
 
-(defn encryptFile 
+(defn encrypt-file
   [path keyName rememberKey shredOriginal]
   (js/encryptFile path keyName rememberKey shredOriginal))
 
-(defn enterKey 
-  [title keyName showOverKeyguard confirm background layout bool = str int]
-  (js/enterKey title keyName showOverKeyguard confirm background layout bool = str int))
+(defn enter-key
+  [title keyName showOverKeyguard confirm background layout timeoutSecs]
+  (js/enterKey title keyName showOverKeyguard confirm background layout timeoutSecs))
 
-(defn flipImage 
+(defn flip-image
   [horizontal]
   (js/flipImage horizontal))
 
-(defn exit 
+(defn exit
   []
-  (js/exit ))
+  (js/exit))
 
-(defn flash 
+(defn flash
   [message]
   (js/flash message))
 
-(defn flashLong 
+(defn flash-long
   [message]
   (js/flashLong message))
 
-(defn getLocation 
+(defn get-location
   [source keepTracking timeoutSecs]
   (js/getLocation source keepTracking timeoutSecs))
 
-(defn getVoice 
+(defn get-voice
   [prompt languageModel timeout]
   (js/getVoice prompt languageModel timeout))
 
-(defn goHome 
+(defn go-home
   [screenNum]
   (js/goHome screenNum))
 
-(defn haptics 
+(defn haptics
   [onFlag]
   (js/haptics onFlag))
 
-(defn hideScene 
+(defn hide-scene
   [sceneName]
   (js/hideScene sceneName))
 
-(defn global 
+(defn global
   [varName]
   (js/global varName))
 
-(defn listFiles 
+(defn list-files
   [dirPath hiddenToo]
   (js/listFiles dirPath hiddenToo))
 
-(defn loadApp 
+(defn load-app
   [name data excludeFromRecents]
   (js/loadApp name data excludeFromRecents))
 
-(defn loadImage 
+(defn load-image
   [uri]
   (js/loadImage uri))
 
-(defn lock 
+(defn lock
   [title code allowCancel rememberCode fullScreen background layout]
   (js/lock title code allowCancel rememberCode fullScreen background layout))
 
-(defn mediaControl 
+(defn media-control
   [action]
   (js/mediaControl action))
 
-(defn micMute 
+(defn mic-mute
   [shouldMute]
   (js/micMute shouldMute))
 
-(defn mobileData 
+(defn mobile-data
   [set]
   (js/mobileData set))
 
-(defn musicBack 
+(defn music-back
   [seconds]
   (js/musicBack seconds))
 
-(defn musicPlay 
+(defn music-play
   [path offsetSecs loop stream]
   (js/musicPlay path offsetSecs loop stream))
 
-(defn musicSkip 
+(defn music-skip
   [seconds]
   (js/musicSkip seconds))
 
-(defn musicStop 
+(defn music-stop
   []
   (js/musicStop ))
 
-(defn nightMode 
+(defn night-mode
   [onFlag]
   (js/nightMode onFlag))
 
-(defn popup 
+(defn popup
   [title text showOverKeyguard background layout timeoutSecs]
   (js/popup title text showOverKeyguard background layout timeoutSecs))
 
-(defn performTask 
+(defn perform-task
   [taskName priority parameterOne parameterTwo]
   (js/performTask taskName priority parameterOne parameterTwo))
 
-(defn profileActive 
+(defn profile-active?
   [profileName]
   (js/profileActive profileName))
 
-(defn pulse 
+(defn pulse
   [onFlag]
   (js/pulse onFlag))
 
-(defn readFile 
+(defn read-file
   [path]
   (js/readFile path))
 
-(defn reboot 
+(defn reboot
   [type]
   (js/reboot type))
 
-(defn resizeImage 
+(defn resize-image
   [width height]
   (js/resizeImage width height))
 
-(defn rotateImage 
+(defn rotate-image
   [dir degrees]
   (js/rotateImage dir degrees))
 
-(defn saveImage 
+(defn save-image
   [path qualityPercent deleteFromMemoryAfter]
   (js/saveImage path qualityPercent deleteFromMemoryAfter))
 
-(defn say 
+(defn say
   [text engine voice stream pitch speed]
   (js/say text engine voice stream pitch speed))
 
-(defn sendIntent 
+(defn send-intent
   [action targetComp package class category data mimeType extras]
   (js/sendIntent action targetComp package class category data mimeType extras))
 
-(defn sendSMS 
+(defn send-sms
   [number text storeInMessagingApp]
   (js/sendSMS number text storeInMessagingApp))
 
-(defn setAirplaneMode 
+(defn set-airplane-mode
   [setOn]
   (js/setAirplaneMode setOn))
 
-(defn setAirplaneRadios 
+(defn set-airplane-radios
   [disableRadios]
   (js/setAirplaneRadios disableRadios))
 
-(defn setAlarm 
+(defn set-alarm
   [hour min message confirmFlag]
   (js/setAlarm hour min message confirmFlag))
 
-(defn setAutoSync 
+(defn set-auto-sync
   [setOn]
   (js/setAutoSync setOn))
 
-(defn scanCard 
+(defn scan-card
   [path]
   (js/scanCard path))
 
-(defn setBT 
+(defn set-bluetooth
   [setOn]
   (js/setBT setOn))
 
-(defn setBTID 
+(defn set-bluetooth-id
   [toSet]
   (js/setBTID toSet))
 
-(defn setGlobal 
+(defn set-global
   [varName newValue]
   (js/setGlobal varName newValue))
 
-(defn setKey 
+(defn set-key
   [keyName passphrase]
   (js/setKey keyName passphrase))
 
-(defn setLocal 
+(defn set-local
   [varName newValue]
   (js/setLocal varName newValue))
 
-(defn setClip 
+(defn set-clip
   [text appendFlag]
   (js/setClip text appendFlag))
 
-(defn settings 
+(defn settings
   [screenName]
   (js/settings screenName))
 
-(defn setWallpaper 
+(defn set-wallpaper
   [path]
   (js/setWallpaper path))
 
-(defn setWifi 
+(defn set-wifi
   [setOn]
   (js/setWifi setOn))
 
-(defn shell 
+(defn shell
   [command asRoot timoutSecs]
   (js/shell command asRoot timoutSecs))
 
-(defn showScene 
+(defn show-scene
   [name displayAs hoffset voffset showExitIcon waitForExit]
   (js/showScene name displayAs hoffset voffset showExitIcon waitForExit))
 
-(defn shutdown 
+(defn shutdown
   []
-  (js/shutdown ))
+  (js/shutdown))
 
-(defn silentMode 
+(defn silent-mode
   [mode]
   (js/silentMode mode))
 
-(defn sl4a 
+(defn sl4a
   [scriptName inTerminal]
   (js/sl4a scriptName inTerminal))
 
-(defn soundEffects 
+(defn sound-effects
   [setTo]
   (js/soundEffects setTo))
 
-(defn speakerPhone 
+(defn speaker-phone
   [setFlag]
   (js/speakerPhone setFlag))
 
-(defn statusBar 
+(defn status-bar
   [expanded]
   (js/statusBar expanded))
 
-(defn stayOn 
+(defn stay-on
   [mode]
   (js/stayOn mode))
 
-(defn stopLocation 
+(defn stop-location
   []
   (js/stopLocation ))
 
-(defn stopTask 
+(defn stop-task
   [err]
   (js/stopTask err))
 
-(defn systemLock 
+(defn system-lock
   []
-  (js/systemLock ))
+  (js/systemLock))
 
-(defn taskRunning 
+(defn task-running?
   [taskName]
   (js/taskRunning taskName))
 
-(defn takeCall 
+(defn take-call
   []
-  (js/takeCall ))
+  (js/takeCall))
 
-(defn takePhoto 
+(defn take-photo
   [camera fileName resolution insertGallery]
   (js/takePhoto camera fileName resolution insertGallery))
 
-(defn type 
+(defn type
   [text repeatCount]
   (js/type text repeatCount))
 
-(defn unzip 
+(defn unzip
   [zipPath deleteZipAfter]
   (js/unzip zipPath deleteZipAfter))
 
-(defn usbTether 
+(defn usb-tether
   [set]
   (js/usbTether set))
 
-(defn vibrate 
+(defn vibrate
   [durationMilliseconds]
   (js/vibrate durationMilliseconds))
 
-(defn vibratePattern 
+(defn vibrate-pattern
   [pattern]
   (js/vibratePattern pattern))
 
-(defn wait 
+(defn wait
   [durationMilliseconds]
   (js/wait durationMilliseconds))
 
-(defn wifiTether 
+(defn wifi-tether
   [set]
   (js/wifiTether set))
 
-(defn writeFile 
+(defn write-file
   [path text append]
   (js/writeFile path text append))
 
-(defn zip 
+(defn zip
   [path level deleteOriginalAfter]
   (js/zip path level deleteOriginalAfter))
