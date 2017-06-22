@@ -3,7 +3,7 @@
 ; http://tasker.dinglisch.net/userguide/en/javascript.html
 
 (defn alarm-vol
-  [level display sound
+  [level display sound]
   (js/alarmVol level display sound))
 
 (defn audio-record
@@ -12,7 +12,7 @@
 
 (defn audio-record-stop
   []
-  (js/audioRecordStop ))
+  (js/audioRecordStop))
 
 (defn browse-url
   [URL]
