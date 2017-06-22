@@ -1,6 +1,6 @@
 (require '[cljs.build.api :as b])
 
 (b/watch "src"
-  {:main 'tasclj.core
-   :output-to "out/tasclj.js"
+  {:main 'tascler.core
+   :output-to "out/tascler.js"
    :output-dir "out"})

@@ -1,4 +1,4 @@
-(ns tasclj.core
+(ns tascler.core
   (:require [clojure.browser.repl :as repl]))
 
 ;; (defonce conn

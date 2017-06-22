@@ -1,4 +1,4 @@
-(defproject tasclj "0.1.0-SNAPSHOT"
+(defproject tascler "0.1.0-SNAPSHOT"
   :description "FIXME: write this!"
   :url "http://example.com/FIXME"
   :dependencies [[org.clojure/clojure "1.8.0"]
