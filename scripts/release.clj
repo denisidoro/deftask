@@ -7,7 +7,6 @@
     {:output-to "release/tascler.js"
      :output-dir "release"
      :source-map "release/tascler.js.map"
-     :optimizations :simple
-     :verbose true
-     :externs ["externs/tascler.js"]})
+     :optimizations :advanced
+     :verbose true})
   (println "... done. Elapsed" (/ (- (System/nanoTime) start) 1e9) "seconds"))

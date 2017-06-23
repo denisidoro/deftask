@@ -37,7 +37,7 @@ function elemVisibility(a1,a2,a3,a4){ console.log("elemVisibility"); return true
 function endCall(){ console.log("endCall"); return true; }
 function enableProfile(a1,a2){ console.log("enableProfile"); return true; }
 function exit(){ console.log("exit"); }
-function flash(a1){ console.log("flash"); }
+function flash(a1){ console.log("flash: " + a1); }
 function flashLong(a1){ console.log("flashLong"); }
 function filterImage(a1,a2){ console.log("filterImage"); return true; }
 function flipImage(a1){ console.log("flipImage"); return true; }
