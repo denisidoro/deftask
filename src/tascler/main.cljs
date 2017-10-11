@@ -1,2 +1,4 @@
 (ns tascler.main
-  (:require [tascler.wallpaper :as wallpaper]))
+  (:require [tascler.http]
+  			[tascler.shell]
+  			[tascler.tasker]))

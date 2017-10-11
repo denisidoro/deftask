@@ -89,7 +89,7 @@ function setKey(a1,a2){ console.log("setKey"); return true; }
 function setLocal(a1,a2){ console.log("setLocal"); }
 function setWallpaper(a1){ console.log("setWallpaper"); return true; }
 function setWifi(a1){ console.log("setWifi"); return true; }
-function shell(a1,a2,a3){ console.log("shell"); return ' '; }
+function shell(a1,a2,a3){ console.log("shell: " + a1 + ", " + a2 + ", " + a3); return '0§§§out§§§err'; }
 function showScene(a1,a2,a3,a4,a5,a6){ console.log("showScene"); return true; }
 function shutdown(){ console.log("shutdown"); return true; }
 function silentMode(a1){ console.log("silentMode"); return true; }

@@ -1,4 +1,4 @@
-(ns tascler.core)
+(ns tascler.tasker)
 
 ; http://tasker.dinglisch.net/userguide/en/javascript.html
 
@@ -350,9 +350,13 @@
   [setOn]
   (js/setWifi setOn))
 
-(defn shell
-  [command asRoot timoutSecs]
-  (js/shell command asRoot timoutSecs))
+(defn ^:export shell
+  ([command]
+    (shell command true))
+  ([command asRoot]
+    (shell command asRoot 300))
+  ([command asRoot timoutSecs]
+    (js/shell command asRoot timoutSecs)))
 
 (defn show-scene
   [name displayAs hoffset voffset showExitIcon waitForExit]
