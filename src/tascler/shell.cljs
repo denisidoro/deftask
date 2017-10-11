@@ -3,7 +3,7 @@
   (:require [tascler.tasker :as tasker]
             [clojure.string :as str]))
 
-(def ^:private wrap-cmd "bash /sdcard/Tasker/sh/wrap.sh")
+(def ^:private ^:const wrap-cmd "bash /sdcard/Tasker/sh/wrap.sh")
 
 (defn ^:private parse
   [cmd-output]
@@ -26,10 +26,9 @@
          full-arg-str (if eval? (str wrap-cmd " --eval " "'" arg-str "'") (str wrap-cmd " " arg-str))]
      (-> full-arg-str
          tasker/shell
-         parse
-         str)))
+         parse)))
 
-(def ^:export unix-command (partial command false))
+(def unix-command (partial command false))
 
 (def grep (partial unix-command "grep"))
 (def find (partial unix-command "find"))

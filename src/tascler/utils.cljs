@@ -11,3 +11,7 @@
 
 (defn map-vals [f m] 
 	(into {} (for [[k v] m] [k (f v)])))
+
+(defn js->cljk
+  [v]
+  (js->clj v :keywordize-keys true))

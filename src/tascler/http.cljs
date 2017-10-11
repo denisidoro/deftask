@@ -69,7 +69,7 @@
 
 (defn ^:private curl-args
   [{:keys [method url data headers request-params output]}]
-  (cond-> ["-vs" "-X" method]
+  (cond-> ["-vsL" "-X" method]
           request-params (conj "--data" (js/JSON.stringify request-params))
           (seq headers) (#(-> (concat % (header-args headers)) vec))
           true (conj url)
@@ -84,8 +84,12 @@
         (apply sh/curl)
         parse-cmd-output)))
 
-(def ^:export GET (partial request "GET"))
+(def GET (partial request "GET"))
 (def POST (partial request "POST"))
 (def PUT (partial request "PUT"))
 (def PATCH (partial request "PATCH"))
 (def DELETE (partial request "DELETE"))
+
+(defn download
+  [url target options]
+  (GET url (assoc options :output target)))

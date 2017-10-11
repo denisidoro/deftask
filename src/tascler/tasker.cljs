@@ -168,11 +168,13 @@
 
 (defn flash
   [message]
-  (js/flash message))
+  (js/flash (str message))
+  message)
 
 (defn flash-long
   [message]
-  (js/flashLong message))
+  (js/flashLong (str message))
+  message)
 
 (defn get-location
   [source keepTracking timeoutSecs]
