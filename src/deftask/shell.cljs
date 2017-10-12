@@ -8,25 +8,18 @@
 (defn ^:private parse
   [cmd-output]
   (let [[code stdout stderr] (str/split cmd-output #"§§§")]
-    {:code code
+    {:code   code
      :stdout stdout
      :stderr stderr}))
 
 (defn ^:export command
-  "Examples:
-  (cmd \"ls\")
-  (cmd \"ls\" \".\")
-  (cmd \"ls\" \".\" {:env {\"TOKEN\" \"123\"}})
-  (cmd \"cat\" previous-cmd-output)
-  (cmd \"grep\" previous-cmd-output \"a\")
-  (cmd \"ls\" previous-cmd-output \".\" {:env {\"TOKEN\" \"123\"}})"
   [eval? cmd & args]
-   (let [args (if (seq args) args [])
-         arg-str (->> args (into [cmd]) (mapv #(str "\"" % "\"")) (str/join " "))
-         full-arg-str (if eval? (str wrap-cmd " --eval " "'" arg-str "'") (str wrap-cmd " " arg-str))]
-     (-> full-arg-str
-         tasker/shell
-         parse)))
+  (let [args         (if (seq args) args [])
+        arg-str      (->> args (into [cmd]) (mapv #(str "\"" % "\"")) (str/join " "))
+        full-arg-str (if eval? (str wrap-cmd " --eval " "'" arg-str "'") (str wrap-cmd " " arg-str))]
+    (-> full-arg-str
+        tasker/shell
+        parse)))
 
 (def unix-command (partial command false))
 
