@@ -1,6 +1,6 @@
-(ns tascler.http
-  (:require [tascler.shell :as sh]
-            [tascler.utils :as utils]
+(ns deftask.http
+  (:require [deftask.shell :as sh]
+            [deftask.utils :as utils]
             [clojure.string :as str]))
 
 (defn ^:private request-header?

@@ -1,8 +1,8 @@
-(ns tascler.main
-  (:require [tascler.http :as http]
-  			[tascler.shell :as sh]
-  			[tascler.utils :as utils]
-  			[tascler.tasker :as tasker]))
+(ns deftask.main
+  (:require [deftask.http :as http]
+  			[deftask.shell :as sh]
+  			[deftask.utils :as utils]
+  			[deftask.tasker :as tasker]))
 
 (def ^:private bing-target "/sdcard/Pictures/Wallpapers/bing.jpg")
 

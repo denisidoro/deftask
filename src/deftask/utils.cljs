@@ -1,4 +1,4 @@
-(ns tascler.utils)
+(ns deftask.utils)
 
 (defn indices [f coll]
   (keep-indexed #(when (f %2) %1) coll))
