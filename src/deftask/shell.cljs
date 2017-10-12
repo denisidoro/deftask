@@ -1,6 +1,6 @@
-(ns tascler.shell
+(ns deftask.shell
   (:refer-clojure :exclude [find sort cat])
-  (:require [tascler.tasker :as tasker]
+  (:require [deftask.tasker :as tasker]
             [clojure.string :as str]))
 
 (def ^:private ^:const wrap-cmd "bash /sdcard/Tasker/sh/wrap.sh")

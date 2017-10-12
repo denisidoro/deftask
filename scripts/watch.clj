@@ -1,6 +1,6 @@
 (require '[cljs.build.api :as b])
 
 (b/watch "src"
-  {:main 'tascler.core
-   :output-to "out/tascler.js"
+  {:main 'deftask.core
+   :output-to "out/deftask.js"
    :output-dir "out"})

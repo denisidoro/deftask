@@ -4,8 +4,8 @@
   '[cljs.repl.browser :as browser])
 
 (b/build "src"
-  {:main 'tascler.core
-   :output-to "out/tascler.js"
+  {:main 'deftask.core
+   :output-to "out/deftask.js"
    :output-dir "out"
    :verbose true})
 

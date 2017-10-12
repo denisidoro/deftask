@@ -1,4 +1,4 @@
-(ns tascler.tasker)
+(ns deftask.tasker)
 
 ; http://tasker.dinglisch.net/userguide/en/javascript.html
 
