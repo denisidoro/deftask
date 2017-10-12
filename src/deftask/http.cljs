@@ -59,13 +59,16 @@
   (partial utils/map-keys any->str))
 
 (defn ^:private sanitize
-  [method url {:keys [query-params request-params data type headers] :or {headers {}} :as options}]
+  [method url {:keys [query-params request-params data type headers agent]
+               :or   {headers {} agent "deftask"} :as options}]
   (cond-> (assoc options :method method :url url)
           query-params (update :url #(->> query-params map-keys-str query-str (str % "?")))
           type (assoc-in [:headers "Content-Type"] type)
+          agent (assoc-in [:headers "User-Agent"] agent)
           headers (update :headers map-keys-str)
           request-params (update :request-params #(->> % map-keys-str clj->js))
-          (keyword? method) (update :method (comp str/upper-case name))))
+          (keyword? method) (update :method (comp str/upper-case name))
+          true (dissoc :type :agent :query-params)))
 
 (defn ^:private curl-args
   [{:keys [method url data headers request-params output]}]
@@ -91,5 +94,7 @@
 (def DELETE (partial request "DELETE"))
 
 (defn download
-  [url target options]
-  (GET url (assoc options :output target)))
+  ([url target]
+   (download url target {}))
+  ([url target options]
+   (GET url (assoc options :output target))))

@@ -38,7 +38,7 @@ function endCall(){ console.log("endCall"); return true; }
 function enableProfile(a1,a2){ console.log("enableProfile"); return true; }
 function exit(){ console.log("exit"); }
 function flash(a1){ console.log("flash: " + a1); }
-function flashLong(a1){ console.log("flashLong"); }
+function flashLong(a1){ console.log("flashLong: " + a1); }
 function filterImage(a1,a2){ console.log("filterImage"); return true; }
 function flipImage(a1){ console.log("flipImage"); return true; }
 function getLocation(a1,a2,a3){ console.log("getLocation"); return true; }

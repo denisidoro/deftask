@@ -242,7 +242,7 @@
 
 (defn music-stop
   []
-  (js/musicStop ))
+  (js/musicStop))
 
 (defn night-mode
   [onFlag]
@@ -354,11 +354,11 @@
 
 (defn ^:export shell
   ([command]
-    (shell command true))
+   (shell command true))
   ([command asRoot]
-    (shell command asRoot 300))
+   (shell command asRoot 300))
   ([command asRoot timoutSecs]
-    (js/shell command asRoot timoutSecs)))
+   (js/shell command asRoot timoutSecs)))
 
 (defn show-scene
   [name displayAs hoffset voffset showExitIcon waitForExit]
@@ -394,7 +394,7 @@
 
 (defn stop-location
   []
-  (js/stopLocation ))
+  (js/stopLocation))
 
 (defn stop-task
   [err]

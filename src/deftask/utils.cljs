@@ -6,12 +6,14 @@
 (defn first-index [f coll]
   (first (indices f coll)))
 
-(defn map-keys [f m] 
-	(into {} (for [[k v] m] [(f k) v])))
+(defn map-keys [f m]
+  (into {} (for [[k v] m] [(f k) v])))
 
-(defn map-vals [f m] 
-	(into {} (for [[k v] m] [k (f v)])))
+(defn map-vals [f m]
+  (into {} (for [[k v] m] [k (f v)])))
 
 (defn js->cljk
   [v]
   (js->clj v :keywordize-keys true))
+
+(def json-str->cljk (comp js->cljk JSON.parse))

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # vim: filetype=sh
 
-catch_output() {
+_catch_output() {
 	eval "$({
 	__2="$(
 	  { __1="$("${@:3}")"; } 2>&1;
@@ -16,10 +16,10 @@ catch_output() {
 }
 
 if [[ ${1:-} == "--eval" || ${1:-} == "-e" ]]; then
-	eval "callback() { $2; }"
-	catch_output stdout stderr callback
+	eval "_callback() { $2; }"
+	_catch_output stdout stderr _callback
 else
-	catch_output stdout stderr "${@:-}"
+	_catch_output stdout stderr "${@:-}"
 fi
 
 echo "${?}§§§${stdout}§§§${stderr}"
