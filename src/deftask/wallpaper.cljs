@@ -36,7 +36,10 @@
       http/GET
       :body
       utils/json-str->cljk
+      :data
+      :children
       rand-nth
+      :data
       :preview
       :images
       first
