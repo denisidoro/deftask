@@ -32,7 +32,7 @@
 
 (defn reddit
   [subreddit]
-  (-> (str reddit-base subreddit ".json")
+  (-> (str reddit-base subreddit "/top.json?limit=5")
       http/GET
       :body
       utils/json-str->cljk

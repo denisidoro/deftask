@@ -22,4 +22,4 @@ else
 	_catch_output stdout stderr "${@:-}"
 fi
 
-echo "${?}§§§${stdout}§§§${stderr}"
+printf "%.40000s" "${?}§§§${stdout}§§§${stderr}"
