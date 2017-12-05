@@ -1,6 +1,6 @@
 (ns deftask.tasker)
 
-; http://tasker.dinglisch.net/userguide/en/javascript.html
+;; http://tasker.dinglisch.net/userguide/en/javascript.html
 
 (defn alarm-vol
   [level display sound]

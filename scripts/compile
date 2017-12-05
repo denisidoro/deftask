@@ -1,0 +1,8 @@
+#!/bin/bash
+set -euo pipefail
+
+if [[ ${1:-} = "prod" ]]; then
+	rlwrap lein trampoline run -m clojure.main scripts/prod.clj
+else 
+	rlwrap lein trampoline run -m clojure.main scripts/dev.clj
+fi

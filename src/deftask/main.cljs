@@ -1,2 +1,3 @@
 (ns deftask.main
-  (:require [deftask.wallpaper]))
+  (:require [deftask.wallpaper]
+            [deftask.time]))

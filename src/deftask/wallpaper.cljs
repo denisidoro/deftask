@@ -1,7 +1,8 @@
 (ns deftask.wallpaper
   (:require [deftask.http :as http]
             [deftask.utils :as utils]
-            [deftask.tasker :as tasker]))
+            [deftask.tasker :as tasker]
+            [deftask.conversion :as conversion]))
 
 (defn wallpaper-target
   [name]
@@ -21,7 +22,7 @@
   (-> (str bing-base bing-entry-point)
       http/GET
       :body
-      utils/json-str->cljk
+      conversion/json->cljk
       :images
       first
       :url
@@ -35,7 +36,7 @@
   (-> (str reddit-base subreddit "/top.json?limit=5")
       http/GET
       :body
-      utils/json-str->cljk
+      conversion/json->cljk
       :data
       :children
       rand-nth

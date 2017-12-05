@@ -4,9 +4,9 @@
 
 (let [start (System/nanoTime)]
   (b/build "src"
-    {:output-to "release/deftask.js"
-     :output-dir "release"
-     :source-map "release/deftask.js.map"
+    {:output-to "out/deftask.js"
+     :output-dir "out"
+     :source-map "out/deftask.js.map"
      :optimizations :advanced
      :verbose true})
   (println "... done. Elapsed" (/ (- (System/nanoTime) start) 1e9) "seconds"))

@@ -1,6 +1,7 @@
 (ns deftask.http
   (:require [deftask.shell :as sh]
             [deftask.utils :as utils]
+            [deftask.conversion :as conversion]
             [clojure.string :as str]))
 
 (defn ^:private request-header?
@@ -48,15 +49,8 @@
   [headers]
   (reduce-kv #(conj %1 "-H" (str %2 ": " %3)) [] headers))
 
-(defn ^:private any->str
-  [v]
-  (condp #(%1 %2) v
-    string? v
-    keyword? (name v)
-    (str v)))
-
 (def ^:private map-keys-str
-  (partial utils/map-keys any->str))
+  (partial utils/map-keys conversion/any->str))
 
 (defn ^:private sanitize
   [method url {:keys [query-params request-params data type headers agent]

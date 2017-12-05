@@ -1,19 +1,44 @@
 (ns deftask.utils)
 
-(defn indices [f coll]
+(defn indices
+  [f coll]
   (keep-indexed #(when (f %2) %1) coll))
 
-(defn first-index [f coll]
+(defn first-index
+  [f coll]
   (first (indices f coll)))
 
-(defn map-keys [f m]
+(defn map-keys
+  [f m]
   (into {} (for [[k v] m] [(f k) v])))
 
-(defn map-vals [f m]
+(defn map-vals
+  [f m]
   (into {} (for [[k v] m] [k (f v)])))
 
-(defn js->cljk
-  [v]
-  (js->clj v :keywordize-keys true))
+(defn namespaced
+  [ns k]
+  (->> k
+       name
+       (keyword ns)))
 
-(def json-str->cljk (comp js->cljk JSON.parse))
+(defn unnamespaced
+  [k]
+  (-> k
+      name
+      keyword))
+
+(defn assoc-if
+  ([m k v]
+   (-> m (cond-> v (assoc k v))))
+  ([m k v & kvs]
+   (let [ret (assoc-if m k v)]
+     (if kvs
+       (when (next kvs)
+         (recur ret (first kvs) (second kvs) (nnext kvs)))
+       ret))))
+
+(defn tap
+  [& args]
+  (print args)
+  (last args))
